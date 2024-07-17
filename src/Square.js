@@ -1,21 +1,22 @@
-import React from "react";
-import "./index.css";
+import './index.css'
 
-const Square = ({ colorValue }) => {
+const Square = ({ colorValue, hexValue, isDarkText }) => {
   return (
-    <section className="square">
-      <h2>{colorValue ? colorValue : "Empty Value"}</h2>
-      <div
-        className="square__color"
-        style={{
-          backgroundColor: colorValue,
-        }}
-      ></div>
-    </section>
-  );
-};
-Square.defaultProps = {
-  colorValue: "Empty Color Value",
-};
+      <section
+          className="square"
+          style={{
+              backgroundColor: colorValue,
+              color: isDarkText ? "#000" : "#FFF", fontSize: "30px"
+          }}
+      >
+          <p>{colorValue ? colorValue : "Empty Value"}</p>
+          <p>{hexValue ? hexValue : null}</p>
+      </section>
+  )
+}
 
-export default Square;
+Square.defaultProps = {
+  colorValue: "Empty Color Value"
+}
+
+export default Square
